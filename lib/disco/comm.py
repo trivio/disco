@@ -182,7 +182,7 @@ class Connection(object):
                 return b''
             self.i = 0
             if len(self):
-                end = min(len(self), self.offset + CHUNK_SIZE) - 1
+                end = min(len(self)+1, self.offset + CHUNK_SIZE) - 1
             else:
                 end = self.offset + CHUNK_SIZE - 1
             headers = auth_header(self.token)
